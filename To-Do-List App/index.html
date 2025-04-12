@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskify - To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="onboarding-container" id="onboardingContainer">
+    <div class="slide active">
+      <img src="assets/download.jpg" alt="Taskify Hero" class="hero-image" />
+      <h1>How it works</h1>
+      <h2>Manage Your Everyday task list</h2>
+      <p>Organize your daily tasks easily</p>
+      <p>and never miss anything important</p>
+    </div>
+    <div class="slide">
+      <img src="assets/ChatGPT Image Apr 11, 2025, 08_23_00 PM.png" alt="Reminders" class="onboarding-image" />
+      <h1>Stay Organized</h1>
+      <h2>Never forget a task</h2>
+      <p>Simple interface to manage</p>
+      <p>all your to-dos in one place</p>
+    </div>
+    <div class="slide">
+      <img src="assets/ChatGPT Image Apr 11, 2025, 08_26_54 PM.png" alt="Progress Tracking" class="onboarding-image" />
+      <h1>Track Progress</h1>
+      <h2>See your accomplishments</h2>
+      <p>Mark tasks as complete</p>
+      <p>and watch your productivity grow</p>
+    </div>
+    <div class="slide-indicators">
+      <span class="indicator active"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+    </div>
+    <button class="onboarding-btn" id="onboardingBtn">Next</button>
+  </div>
+  <div class="name-input-container" id="nameInputContainer" style="display: none;">
+    <img src="assets/Screenshot 2025-04-11 203132.png" alt="Welcome" class="welcome-image" />
+    <h1>Welcome to Taskify!</h1>
+    <h2>What should we call you?</h2>
+    <input type="text" id="userNameInput" placeholder="Enter your name" />
+    <button id="submitNameBtn" disabled>Continue</button>
+  </div>
+  <div class="app-container" id="appContainer" style="display: none;">
+    <div class="header">
+      <div class="header-left">
+        <img src="assets/Screenshot 2025-04-11 203132.png" alt="User" class="profile-pic" />
+      </div>
+      <div class="header-center">
+        <h1>Hello, <span id="usernameDisplay"></span>!</h1>
+        <span class="profile-link">Profile</span>
+      </div>
+      <div class="header-right">
+        <div class="logout-btn" id="logoutBtn">Logout</div>
+        <div class="search-icon">🔍</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number" id="pendingTasksCount">0</div>
+        <div class="stat-label">Tasks Pending</div>
+      </div>
+    </div>
+    <div class="search-container" id="searchContainer" style="display: none;">
+      <input type="text" id="searchInput" placeholder="Search tasks..." />
+      <button id="closeSearchBtn">✕</button>
+    </div>
+    <div class="task-list-container">
+      <ul class="task-list" id="taskList"></ul>
+      <div id="emptyState" class="empty-state">
+        <img src="assets/no-task.png" alt="No tasks" class="empty-image" />
+        <p>No tasks found. Add your first task!</p>
+      </div>
+    </div>
+    <button class="add-task-btn" id="addTaskBtn">+</button>
+    <div class="bottom-nav">
+      <div class="nav-item active" id="homeNav">🏠 Home</div>
+      <div class="nav-item" id="tasksNav">📋 Tasks</div>
+    </div>
+  </div>
+  <div class="modal" id="addTaskModal">
+    <div class="modal-content">
+      <h2>Add New Task</h2>
+      <input type="text" id="newTaskInput" placeholder="What needs to be done?" />
+      <input type="datetime-local" id="reminderTimeInput" />
+      <div class="modal-actions">
+        <button id="cancelAddTask">Cancel</button>
+        <button id="saveTask">Add Task</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
